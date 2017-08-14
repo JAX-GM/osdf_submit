@@ -119,8 +119,8 @@ NodeDataFiles = {
 
     #'Sample':       './data_files/KevinMetabolome2017.csv',
     #'hostSeqPrep':   './data_files/KevinMetabolome2017.csv',
-    'hostAssayPrep':   './data_files/KevinMetabolome2017.csv',
-    #'metabolome':   './data_files/KevinMetabolome2017.csv',
+    #'hostAssayPrep':   './data_files/KevinMetabolome2017.csv',
+    'metabolome':   './data_files/KevinMetabolome2017.csv',
 
 
     # ...plus all dnaPreps, rawFiles, etc....

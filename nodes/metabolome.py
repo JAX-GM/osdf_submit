@@ -58,16 +58,16 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.subtype       = 'host'
     node.checksums     = {'md5':record['MD5Sum'], 'sha256':record['SHA256']}
     node.local_file    = record['url']
-    node.tags          = list_tags(node.tags,
-                          'sample name: '+ record['sample_name_id'] + ".metabolome",
-                          'visit id: '+ record['visit_id'],
-                          'subject id: '+ record['rand_subject_id'],
-                          'sample fluid type: ' + 'Plasma',
-                          'type: ' + record['Type'],
-                          'batch: ' + record['BATCH'],
-                          'mode: ' + record['MODE'],
-                          )
-
+    #node.tags          = list_tags(node.tags,
+                          #'sample name: '+ record['sample_name_id'] + ".metabolome",
+                          #'visit id: '+ record['visit_id'],
+                          #'subject id: '+ record['rand_subject_id'],
+                          #'sample fluid type: ' + 'Plasma',
+                          #'type: ' + record['Type'],
+                          #'batch: ' + record['BATCH'],
+                          #'mode: ' + record['MODE']
+                          #)
+    import pdb ; pdb.set_trace()
     log.debug('parent_id: '+str(parent_id))
     node.links = {'derived_from':[parent_id]}
 
@@ -105,7 +105,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
                 internal_id = os.path.basename(record['sample_name_id'] + '.metabolome')
                 parent_internal_id = record['sample_name_id'] + '.hostassayprep'
                 grand_parent_internal_id = record['prep_id']
-
+                
                 parent_id = get_parent_node_id(
                     id_tracking_file, parent_type, parent_internal_id)
 
