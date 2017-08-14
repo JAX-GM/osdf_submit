@@ -55,7 +55,7 @@ try:
     log = log_it()
     session = iHMPSession(auth.username, auth.password)
     osdf = session.get_osdf()
-    info = osdf().get_info()
+    info = osdf.get_info()
     print(info)
     # info = session.get_session()
     # info = session.port

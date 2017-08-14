@@ -56,13 +56,13 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.format        = record['format'] ## FIX TO HANDLE mzXML files
     node.format_doc    = 'https://en.wikipedia.org/wiki/Mass_spectrometry_data_format'
     node.subtype       = 'host'
-    node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
-    node.local_file    = record['local_file']
+    node.checksums     = {'md5':record['MD5Sum'], 'sha256':record['SHA256']}
+    node.local_file    = record['url']
     node.tags          = list_tags(node.tags,
                           'sample name: '+ record['sample_name_id'] + ".metabolome",
                           'visit id: '+ record['visit_id'],
                           'subject id: '+ record['rand_subject_id'],
-                          'sample fluid type: ' + record['SAMPLE_FLUID_TYPE'],
+                          'sample fluid type: ' + 'Plasma',
                           'type: ' + record['Type'],
                           'batch: ' + record['BATCH'],
                           'mode: ' + record['MODE'],

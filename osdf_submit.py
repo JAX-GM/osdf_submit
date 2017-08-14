@@ -55,6 +55,7 @@ def main():
     # from nodes import subject
     # subject_nodes = subject.submit(study_name, study_node_id,
     #         settings.NodeDataFiles['Subject'])
+
     # """ Visit node """
     # from nodes import visit
     # visit_nodes = visit.submit(settings.NodeDataFiles['Visit'])
@@ -85,12 +86,12 @@ def main():
     # host_transcriptomic_raw_seq_set_nodes = hostTranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['hostTranscriptomicsRawSeqSet'])
 
     """ HostAssayPrep node """
-    ## from nodes import host_Assay_Prep
-    ## host_assay_prep_nodes = host_Assay_Prep.submit(settings.NodeDataFiles['hostAssayPrep'])
+    from nodes import host_Assay_Prep
+    host_assay_prep_nodes = host_Assay_Prep.submit(settings.NodeDataFiles['hostAssayPrep'])
 
     """ HostSeqPrep node """
-    # from nodes import host_Seq_Prep
-    # host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrepTranscriptome'])
+    #from nodes import host_Seq_Prep
+    #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrep'])
 
     """ 16S DNA Prep node """
     # from nodes import r16sDnaPrep
@@ -117,18 +118,17 @@ def main():
     # wgs_asseembled_nodes = WgsAsseembledSeqSet.submit(settings.NodeDataFiles['WgsAssembledSeqs'])
 
     """ Visit node """
-    # from nodes import visit
-    # visit_nodes = visit.submit(
-    #         settings.NodeDataFiles['Visit'])
+    #from nodes import visit
+    #visit_nodes = visit.submit(settings.NodeDataFiles['Visit'])
+    
     """ Sample node """
-    # from nodes import sample
-    # sample_nodes = sample.submit(
-    #         settings.NodeDataFiles['Sample'])
+    #from nodes import sample
+    #sample_nodes = sample.submit(settings.NodeDataFiles['Sample'])
 
     """ 16S DNA Prep node """
-    from nodes import r16sDnaPrep
-    r16_nodes = r16sDnaPrep.submit(
-            settings.NodeDataFiles['r16sDnaPrep'])
+    #from nodes import r16sDnaPrep
+    #r16_nodes = r16sDnaPrep.submit(
+    #         settings.NodeDataFiles['r16sDnaPrep'])
     """ 16S Raw Sequence Set node """
     # from nodes import r16sRawSeqSet
     # raw_nodes = r16sRawSeqSet.submit(

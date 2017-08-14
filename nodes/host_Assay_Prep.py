@@ -67,28 +67,30 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 
     node.study         = 'prediabetes'
     node.comment       = record['sample_name_id'] + '.hostassayprep'
-    node.sample_name   = record['SAMPLE_PARENT_ID']
-    node.contact       = record['sequencing_contact']
-    node.center        = record['center']
-    node.format        = 'mzXML'
-    node.format_doc    = 'https://en.wikipedia.org/wiki/Mass_spectrometry_data_format'
+    node.sample_name   = record['sample_name_id']
+    node.contact       = 'Kevin Contrepois'
+    node.center        = 'Stanford'
+    node.format        = 'raw'
+    node.format_doc    = 'https://en.wikipedia.org/wiki/raw'
     node.exp_length    = 0 #record['exp_length']
-    node.local_file    = record['FILE_NAME']
+    #node.local_file    = record['DCC_File_Path']
     node.experiment_type    = 'Untargeted metabolomics'
-    node.title         = record['title']
-    node.prep_id       = record['prep_id']
+    node.title         = 'T2D Prediabetes Proteomics'
+    node.prep_id       = record['rand_subject_id']
     node.pride_id      = 'null'
-#    node.checksums     = {'md5': md5.hexdigest(), 'sha256':record['sha256']}
+    #node.checksums     = {'md5': md5.hexdigest(), 'sha256':record['sha256']}
     node.storage_duration = 0
-    node.size          = int(record['size'])
-    node.tags = list_tags(node.tags,
-                          # 'test', # for debug!!
-                          'visit id: '+record['visit_id'],
-                          'subject id: '+record['rand_subject_id'],
-                          'file prefix: '+ record['prep_id'],
-                          'file name: '+ str(record['FILE_NAME']),
-                         )
-
+    #node.size          = int(record['FileSize'])
+    node.protocol_steps = ''
+    node.species        = 'Homo sapiens (Human)'
+    node.subtype        = ''
+    node.tissue         = 'blood'
+    #node.tags = list_tags(node.tags,
+    #                      # 'test', # for debug!!
+    #                      'visit id: ' + record['visit_id'],
+    #                      'subject id: ' + record['rand_subject_id'],
+    #)
+    
     parent_link = {'prepared_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
@@ -110,7 +112,6 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
                       fieldnames=csv_fieldnames, values=[record,])
         return False
 
-
 def submit(data_file, id_tracking_file=node_tracking_file):
     log.info('Starting submission of %ss.', node_type)
     nodes = []
@@ -123,7 +124,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = os.path.basename(record['local_file'])
+            internal_id = record['sample_name_id'] + '.hostassayprep'
             parent_internal_id = record['sample_name_id']
             grand_parent_internal_id = record['visit_id']
 

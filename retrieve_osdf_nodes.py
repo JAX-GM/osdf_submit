@@ -33,12 +33,12 @@ def main():
     """ Visit node """
     # retrieve_node_type(session, 'visit')
     """ Sample node """
-    # retrieve_node_type(session, 'sample')
+    retrieve_node_type(session, 'sample')
 
     """ 16S nodes """
     # retrieve_node_type(session, '16s_dna_prep')
-    retrieve_node_type(session, '16s_raw_seq_set')
-    retrieve_node_type(session, '16s_trimmed_seq_set')
+    #retrieve_node_type(session, '16s_raw_seq_set')
+    #retrieve_node_type(session, '16s_trimmed_seq_set')
 
     """ WGS nodes """
     # retrieve_node_type(session, 'wgs_dna_prep')

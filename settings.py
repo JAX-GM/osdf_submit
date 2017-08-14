@@ -112,8 +112,15 @@ NodeDataFiles = {
     # 'Sample':       './data_files/HMP2_metadata-samples_NotSubmitted-20170212.csv',
 
     # 'Subject':      './data_files/HMP2_metadata-subjects_NotSubmitted-20170212.csv',
-    # 'Visit':        './data_files/HMP2_metadata-visits_NotSubmitted-20170212_2.csv',
-    # 'Sample':       './data_files/HMP2_metadata-samples_NotSubmitted-20170212_2.csv',
+
+    #'Visit':        './data_files/Wenyu_Visits.csv',
+    #'Sample':       './data_files/SaraProteome.csv',
+    #'hostAssayPrep':   './data_files/SaraProteome.csv',
+
+    #'Sample':       './data_files/KevinMetabolome2017.csv',
+    #'hostSeqPrep':   './data_files/KevinMetabolome2017.csv',
+    'hostAssayPrep':   './data_files/KevinMetabolome2017.csv',
+    #'metabolome':   './data_files/KevinMetabolome2017.csv',
 
 
     # ...plus all dnaPreps, rawFiles, etc....
@@ -153,10 +160,10 @@ NodeDataFiles = {
 
     # Last Lots
     # 'Visit':        './data_files/20170629_visits_missing.csv',
-    'Sample':       './data_files/20170630_sample_missing.csv',
-    'r16sDnaPrep':  './data_files/20170630_sample_missing.csv',
-    'r16sRawSeqs':  './data_files/20170630_sample_missing.csv',
-    'r16sTrimSeqs': './data_files/20170630_16Scleans_missing.csv',
+    #'Sample':       './data_files/20170630_sample_missing.csv',
+    #'r16sDnaPrep':  './data_files/20170630_sample_missing.csv',
+    #'r16sRawSeqs':  './data_files/20170630_sample_missing.csv',
+    #'r16sTrimSeqs': './data_files/20170630_16Scleans_missing.csv',
 
     }
 
