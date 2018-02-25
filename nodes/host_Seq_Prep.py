@@ -66,7 +66,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     #        md5sum.update(chunk)
 
     node.study         = 'prediabetes'
-    node.comment       = str(record['host_seq_prep_name_id']) + '.hostseqprep'
+    node.comment       = str(record['host_seq_prep_name_id'])
     node.prep_id        = ''
     node.sequencing_contact = ''
     node.sequencing_center = 'Stanford University'
@@ -77,15 +77,15 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.storage_duration = int('1')
     #node.checksums     = {'md5': md5sum.hexdigest(), 'sha256':record['sha256']}
     #node.size          = int(record['size'])
-    #node.lib_layout     = 'fragment' #record['lib_layout']
+    node.lib_layout     = 'paired'
     node.lib_selection  = 'hybrid selection' #record['lib_selection']
     node.ncbi_taxon_id  = '9606'
-    node.prep_id        = record['rand_subject_id']
+    node.prep_id        = record['rand_patient_id']
     node.subtype        = ''
     #node.tags = list_tags(node.tags,
                       #'sample name: '+record['sample_name_id'],
                       #'visit id: '+record['visit_id'],
-                      #'subject id: '+record['rand_subject_id'],
+                      #'subject id: '+record['rand_patient_id'],
                       #'file prefix: '+ record['prep_id'],
                       #'file name: '+ str(record['sample_name_id']) + '.hostseqprep',
                       #)  

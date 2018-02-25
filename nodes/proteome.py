@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" load mWGS Raw Seq Set into OSDF using info from data file """
+""" load Proteome into OSDF using info from data file """
 
 import os
 import re
@@ -17,10 +17,10 @@ log = log_it(filename)
 
 # the Higher-Ups
 node_type          = 'Proteome'
-parent_type        = 'Sample'
-grand_parent_type  = 'Visit'
-great_parent_type  = 'Subject'
-great_great1_type  = 'Study'
+parent_type        = 'HostAssayPrep'
+grand_parent_type  = 'Sample'
+great_parent_type  = 'Visit'
+great_great1_type  = 'Subject'
 
 node_tracking_file = settings.node_id_tracking.path
 
@@ -36,7 +36,7 @@ class node_values:
     checksums = ''
     size = ''
     study = ''
-    urls = []
+    pepid_url = []
     tags = []
 
 
@@ -53,37 +53,54 @@ def load(internal_id, search_field):
 def validate_record(parent_id, node, record, data_file_name=node_type):
     """update record fields
        validate node
-       if valid, save, if not, return false
-    """
-    log.info("in validate/save: "+node_type)
+       if valid, save, if not, return false"""
+    
     csv_fieldnames = get_field_header(data_file_name)
     write_csv_headers(data_file_name,fieldnames=csv_fieldnames)
 
-    node.study         = 'prediabetes'
-    node.comment       = record['local_uri']
-    node.prepared_by   = record['sequencing_contact']
-    node.sequence_type = 'nucleotide'
-    node.format        = 'fastq'
-    node.format_doc    = 'https://en.wikipedia.org/wiki/'
-    node.exp_length    = 0 #record['exp_length']
-    node.local_file    = [record['local_uri']]
-#    node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
-#    node.size          = int(record['size'])
-    node.tags = list_tags(node.tags,
+    #node.prepared_by   = 'Sara Ahadi'
+    #node.sequence_type = 'nucleotide'
+    #node.format        = 'mzml'
+    #node.format_doc    = 'https://en.wikipedia.org/wiki/'
+    #node.exp_length    = 0 #record['exp_length']
+    node.raw_url    = [record['DCC_File_Path']]
+    #node.size          = int(record['size'])
+    #node.tags = list_tags(node.tags,
                           # 'test', # for debug!!
-                          'sample name: '+record['visit_id'],
-                          'visit id: '+record['visit_id'],
-                          'subject id: '+record['rand_subject_id'],
-                          'study: prediabetes',
-                          'file prefix: '+ record['prep_id'],
-                          'file name: '+ record['local_uri'],
-                         )
-    node.lib_layout     = record['lib_layout']
-    node.lib_selection  = record['lib_selection']
-    node.ncbi_taxon_id  = record['ncbi_taxon_id']
-    node.prep_id        = record['prep_id']
+                          #'sample name: '+record['sample_name_id'],
+                          #'visit id: '+record['visit_id'],
+                          #'subject id: '+record['rand_subject_id'],
+                          #'file name: '+ record['sample_name_id'] + 'mxML.gz',
+    #                     )
+    #node.analyzer = 'TOF(Time of Flight)'
+    node.comment = record['sample_name_id']
+    node.checksums = {'md5':record['MD5Sum'], 'sha256':record['SHA256']}
+    node.data_processing_protocol = 'Targeted Data Independent analysis'
+    #node.detector = 'Multi-Channel Plate'
+    #node.exp_description = 'Protein profiling of more than 900 samples from pre-diabetic and diabetic participants and different time points of healthy, viral infection and immunization.'
+    #node.instrument_name = 'Triple-TOF 6600 (Sciex)'
+    #node.pepid_url.append(record['DCC_File_Path'])
+    #node.pepid_url.remove('')
+    #node.pride_id = ''
+    node.processing_method = 'Targeted Data independent analysis with OpenSwath'
+    #node.peak_url = ''
+    node.protocol_name = 'SWATH_Proteomics (attached)'
+    node.sample_name = 'Plasma'
+    node.search_engine = 'ProteinPilot Paragon database search algorithm'
+    #node.short_label = ''
+    #node.software = 'ProteinPilot 5.0.1, OpenSwath, PyProphet, TRIC'
+    node.source = 'DuoSpray Ion Source'
+    node.subtype = 'host'
+    #node.raw_url = ''
+    #node.result_url = ''
+    #node.other_url = ''
+    node.study = 'prediabetes'
+    #node.tags = ()
+    node.title = 'T2D Prediabetes'
 
-    parent_link = {'sequenced_from':[parent_id]}
+#Targeted Immunoproteomics
+
+    parent_link = {'derived_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
 
@@ -117,8 +134,8 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = os.path.basename(record['local_url'])
-            parent_internal_id = record['prep_id']
+            internal_id = record['sample_name_id'] + '.proteome'
+            parent_internal_id = record['sample_name_id'] + '.hostassayprep'
             grand_parent_internal_id = record['visit_id']
 
             parent_id = get_parent_node_id(
@@ -129,6 +146,8 @@ def submit(data_file, id_tracking_file=node_tracking_file):
             if not getattr(node, load_search_field):
                 log.debug('loaded node newbie...')
                 node_is_new = True
+
+            import pdb ; pdb.set_trace()
 
             saved = validate_record(parent_id, node, record,
                                     data_file_name=data_file)

@@ -114,13 +114,18 @@ NodeDataFiles = {
     # 'Subject':      './data_files/HMP2_metadata-subjects_NotSubmitted-20170212.csv',
 
     #'Visit':        './data_files/Wenyu_Visits.csv',
-    #'Sample':       './data_files/SaraProteome.csv',
+    'Sample':       './data_files/SaraProteome.csv',
     #'hostAssayPrep':   './data_files/SaraProteome.csv',
+    #'proteome':   './data_files/SaraProteome.csv',
 
     #'Sample':       './data_files/KevinMetabolome2017.csv',
     #'hostSeqPrep':   './data_files/KevinMetabolome2017.csv',
     #'hostAssayPrep':   './data_files/KevinMetabolome2017.csv',
-    'metabolome':   './data_files/KevinMetabolome2017.csv',
+    #'metabolome':   './data_files/KevinMetabolome2017.csv',
+
+    #'Visit':        './data_files/RezaFiles.csv',
+    #'hostSeqPrep':   './data_files/RezaFiles.csv',
+    #'hostTranscriptomicsRawSeqSet':   './data_files/RezaFiles.csv',
 
 
     # ...plus all dnaPreps, rawFiles, etc....

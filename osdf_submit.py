@@ -61,13 +61,26 @@ def main():
     # visit_nodes = visit.submit(settings.NodeDataFiles['Visit'])
 
     # """ Sample node """
-    # from nodes import sample
-    # sample_nodes = sample.submit(
-    #         settings.NodeDataFiles['metabolomeSample'])
+    from nodes import sample
+    sample_nodes = sample.submit(settings.NodeDataFiles['Sample'])
 
     # """ Metabolome HOST Sample node """
-    from nodes import metabolome
-    metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
+    #from nodes import metabolome
+    #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
+
+    # """ Proteome HOST Sample node """
+    #from nodes import proteome
+    #proteome_nodes = proteome.submit(settings.NodeDataFiles['proteome'])
+
+
+    """ HostSeqPrep node """
+    #from nodes import host_Seq_Prep
+    #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrep'])
+
+    """ HostTranscriptomicRawSeqPrep node """
+    #from nodes import hostTranscriptomicsRawSeqSet
+    #host_transcriptomic_raw_seq_set_nodes = hostTranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['hostTranscriptomicsRawSeqSet'])
+
 
     # """ WGS HOST Sample node """
     # from nodes import host_Seq_Prep_Sample
@@ -82,16 +95,12 @@ def main():
     #sample_nodes = sample.submit(settings.NodeDataFiles['hostTranscriptomicSample'])
 
     """ HostTranscriptomicRawSeqPrep node """
-    # from nodes import hostTranscriptomicsRawSeqSet
-    # host_transcriptomic_raw_seq_set_nodes = hostTranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['hostTranscriptomicsRawSeqSet'])
+    #from nodes import host_TranscriptomicsRawSeqSet
+    #host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['hostTranscriptomicsRawSeqSet'])
 
     """ HostAssayPrep node """
     #from nodes import host_Assay_Prep
     #host_assay_prep_nodes = host_Assay_Prep.submit(settings.NodeDataFiles['hostAssayPrep'])
-
-    """ HostSeqPrep node """
-    #from nodes import host_Seq_Prep
-    #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrep'])
 
     """ 16S DNA Prep node """
     # from nodes import r16sDnaPrep
