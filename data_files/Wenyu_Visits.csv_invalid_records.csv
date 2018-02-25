@@ -1,0 +1,3 @@
+SubjectID,SampleID,CollectionDate,CL1,CL2,CL3,visit_type,interval,"Visit ID
+(Do Not Submit!)",DCC_VISIT_IDS,rand_subject_id,visit_num,OSDF_Visit_ID,visit_id,"Subject ID
+(Do Not Submit!)",,SampleID,,

@@ -1,0 +1,4 @@
+SubjectID,SampleID,CollectionDate,CL1,CL2,CL3,visit_type,interval,"Visit ID
+(Do Not Submit!)",DCC_VISIT_IDS,rand_subject_id,visit_num,OSDF_Visit_ID,visit_id,"Subject ID
+(Do Not Submit!)",,SampleID,,
+70-1014,70,10/14/13,21,#N/A,,,,Healthy,227,70-1014_227,ZJXC41N-01_227,ZJXC41N,#N/A,1,70-1014,1,70,1,1

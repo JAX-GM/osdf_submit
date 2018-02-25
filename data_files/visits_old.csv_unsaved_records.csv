@@ -1,0 +1,9 @@
+,"Subject ID(Do Not Submit!)",visit_id,"Visit ID(Do Not Submit!)",visit_num,interval,"Converted Day(Do Not Submit!)","Microbiome Note(Do Not Submit)",rand_subject_id,"study(tag)","sub_study(tag)","visit_type(tag)",DCC_VISIT_IDS,OSDF_ID
+YES,70-1012,1,70-1012-01,1,0,89,Sent,ZK112BX,,,,ZK112BX-01_1_0,#N/A,YES
+NO,69-029,1,69-029-01,1,0,234,HostOnly,ZMVGNWF,,,,ZMVGNWF-01_1_0,#N/A,NO
+NO,69-016,1,69-016-01,1,0,189,Sent,ZNQOVZV,,,,ZNQOVZV-01_1_0,#N/A,NO
+NO,69-013,1,69-013-01,1,0,91,HostOnly,ZO5QFNX,,,,ZO5QFNX-01_1_0,#N/A,NO
+YES,69-012,8,69-012-08,10,578,682,Sent,ZO94RDZ,,,,ZO94RDZ-08_10_578,#N/A,YES
+NO,69-012,1011,69-012-1011,11,617,721,HostOnly,ZO94RDZ,,,,ZO94RDZ-1011_11_617,#N/A,NO
+YES,69-048,2,69-048-02,2,49,462,Sent,ZY1ZKJY,,,,ZY1ZKJY-02_2_49,#N/A,YES
+NO,69-043,2014,69-043-2014,9,220,612,HostOnly,ZYHHR4Z,,,,ZYHHR4Z-2014_9_220,#N/A,NO
