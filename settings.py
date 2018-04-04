@@ -75,7 +75,7 @@ NodeDataFiles = {
     # 'hostAssayPrep':   './data_files/metabolome.csv',
     # 'hostTranscriptomicSample':'./data_files/brian_host_transcriptomics_raw_seq_set.csv',
     # 'hostTranscriptomicsRawSeqSet':   './data_files/host_transcriptomics_hostSeqSet.csv',
-    # 'hostSeqPrep' : './data_files/host_seq_prep.csv',
+    'hostSeqPrep' : './data_files/host_seq_prep.csv',
     # 'proteome' :    './data_files/proteome.csv',
     # 'hostWgsSample':  './data_files/wgs_samples.csv',
     # 'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
@@ -114,7 +114,7 @@ NodeDataFiles = {
     # 'Subject':      './data_files/HMP2_metadata-subjects_NotSubmitted-20170212.csv',
 
     #'Visit':        './data_files/Wenyu_Visits.csv',
-    'Sample':       './data_files/SaraProteome.csv',
+    #'Sample':       './data_files/SaraProteome.csv',
     #'hostAssayPrep':   './data_files/SaraProteome.csv',
     #'proteome':   './data_files/SaraProteome.csv',
 
@@ -172,7 +172,7 @@ NodeDataFiles = {
 
     }
 
-CURDATE = time.strftime("%Y%m%d")
+'''CURDATE = time.strftime("%Y%m%d")
 NodeRetrievalFiles = {
     'subject':      './osdf_node_records/{}_subjects.csv'.format(CURDATE),
     'visit':        './osdf_node_records/{}_visits.csv'.format(CURDATE),
@@ -202,7 +202,7 @@ NodeUpdateFiles = {
     'r16sTrimSeqs': './osdf_node_records/20170307_update_r16sTrimSeqs_comments.csv',
     'r16sDnaPrep':  './osdf_node_records/20170317_update_16SdnaPreps_linkage.csv',
     }
-
+'''
 
 class node_hierarchy:
   """node_hierarchy lists nodes in hierarchical tree

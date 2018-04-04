@@ -61,8 +61,8 @@ def main():
     # visit_nodes = visit.submit(settings.NodeDataFiles['Visit'])
 
     # """ Sample node """
-    from nodes import sample
-    sample_nodes = sample.submit(settings.NodeDataFiles['Sample'])
+    #from nodes import sample
+    #sample_nodes = sample.submit(settings.NodeDataFiles['Sample'])
 
     # """ Metabolome HOST Sample node """
     #from nodes import metabolome
@@ -74,8 +74,8 @@ def main():
 
 
     """ HostSeqPrep node """
-    #from nodes import host_Seq_Prep
-    #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrep'])
+    from nodes import host_Seq_Prep
+    host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['hostSeqPrep'])
 
     """ HostTranscriptomicRawSeqPrep node """
     #from nodes import hostTranscriptomicsRawSeqSet
