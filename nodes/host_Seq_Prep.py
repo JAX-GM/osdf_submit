@@ -66,21 +66,22 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     #        md5sum.update(chunk)
 
     node.study         = 'prediabetes'
-    node.comment       = str(record['host_seq_prep_name_id'])
+    node.comment       = str(record['prepared_from'])
     node.prep_id        = ''
     node.sequencing_contact = ''
     node.sequencing_center = 'Stanford University'
     node.format        = 'raw'
     node.format_doc    = 'https://en.wikipedia.org/wiki/' + str(node.format)
     node.exp_length    = 0 #record['exp_length']
-    node.local_file    = str(record['sample_name_id']) + '.hostseqprep'
+    node.local_file    = str(record['local_file'])
+    #node.local_file    = str(record['prepared_from']) + '.hostseqprep'
     node.storage_duration = int('1')
     #node.checksums     = {'md5': md5sum.hexdigest(), 'sha256':record['sha256']}
     #node.size          = int(record['size'])
     node.lib_layout     = 'paired'
     node.lib_selection  = 'hybrid selection' #record['lib_selection']
     node.ncbi_taxon_id  = '9606'
-    node.prep_id        = record['rand_patient_id']
+    node.prep_id        = record['rand_subject_id']
     node.subtype        = ''
     #node.tags = list_tags(node.tags,
                       #'sample name: '+record['sample_name_id'],
@@ -124,8 +125,8 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = record['host_seq_prep_name_id']
-            parent_internal_id = record['sample_name_id']
+            internal_id = record['prepared_from']
+            parent_internal_id = record['prep_id']
             grand_parent_internal_id = record['visit_id']
 
             parent_id = get_parent_node_id(

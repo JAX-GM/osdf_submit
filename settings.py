@@ -75,10 +75,10 @@ NodeDataFiles = {
     # 'hostAssayPrep':   './data_files/metabolome.csv',
     # 'hostTranscriptomicSample':'./data_files/brian_host_transcriptomics_raw_seq_set.csv',
     # 'hostTranscriptomicsRawSeqSet':   './data_files/host_transcriptomics_hostSeqSet.csv',
-    'hostSeqPrep' : './data_files/host_seq_prep.csv',
+    # 'hostSeqPrep' : './data_files/host_seq_prep.csv',
     # 'proteome' :    './data_files/proteome.csv',
     # 'hostWgsSample':  './data_files/wgs_samples.csv',
-    # 'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
+    'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
     # 'hostSeqPrepTranscriptome' : './data_files/host_transcriptomics_hostSeqSet.csv',
     #
     #
