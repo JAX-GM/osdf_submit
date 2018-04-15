@@ -69,14 +69,14 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.local_file    = record['local_file']
     node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
     node.size          = int(record['size'])
-    node.tags = list_tags(node.tags,
-                          # 'test', # for debug!!
-                          'sample name: '+record['visit_id'],
-                          'visit id: '+record['visit_id'],
-                          'subject id: '+record['rand_subject_id'],
-                          'file prefix: '+ record['prep_id'],
-                          'file name: '+ record['local_file'],
-                         )
+#    node.tags = list_tags(node.tags,
+#                          # 'test', # for debug!!
+#                          'sample name: '+record['visit_id'],
+#                          'visit id: '+record['visit_id'],
+#                          'subject id: '+record['rand_subject_id'],
+#                          'file prefix: '+ record['prep_id'],
+#                          'file name: '+ record['local_file'],
+#                         )
     parent_link = {'sequenced_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
@@ -111,22 +111,19 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = os.path.basename(record['prepared_from'])
-	    parent_internal_id = str(record['prepared_from']) + '.hostseqprep'
+            internal_id = record['prepared_from']
+            parent_internal_id = str(record['prepared_from']) + '.hostseqprep'
             grand_parent_internal_id = record['visit_id']
             parent_id = get_parent_node_id(
                 id_tracking_file, parent_type, parent_internal_id)
 
-	    import pdb ; pdb.set_trace()
-	    node = load(internal_id, load_search_field)
-	    node_is_new = False # set to True if newbie
+            node_is_new = False # set to True if newbie
             node = load(internal_id, load_search_field)
             if not getattr(node, load_search_field):
                 log.debug('loaded node newbie...')
                 node_is_new = True
 
-	    saved = validate_record(parent_id, node, record,
-                                    data_file_name=data_file)
+            saved = validate_record(parent_id, node, record, data_file_name=data_file)
             if saved:
                 header = settings.node_id_tracking.id_fields
                 saved_name = getattr(saved, load_search_field)
