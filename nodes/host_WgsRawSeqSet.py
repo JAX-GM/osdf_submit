@@ -46,7 +46,6 @@ def load(internal_id, search_field):
     # node-specific variables:
     NodeTypeName = node_type
     NodeLoadFunc = 'load_hostWgsRawSeqSet'
-
     return load_node(internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
 
@@ -60,7 +59,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     write_csv_headers(data_file_name,fieldnames=csv_fieldnames)
 
     node.study         = 'prediabetes'
-    node.comment       = record['local_file']
+    node.comment       = record['file_name']
     node.sequence_type = 'nucleotide'
     node.seq_model     = record['seq_model']
     node.format        = 'fastq'
@@ -69,6 +68,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.local_file    = record['local_file']
     node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
     node.size          = int(record['size'])
+#    node.urls          = record['local_file']
 #    node.tags = list_tags(node.tags,
 #                          # 'test', # for debug!!
 #                          'sample name: '+record['visit_id'],
@@ -80,8 +80,8 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     parent_link = {'sequenced_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
-
     csv_fieldnames = get_field_header(data_file_name)
+
     if not node.is_valid():
         write_out_csv(data_file_name+'_invalid_records.csv',
                       fieldnames=csv_fieldnames, values=[record,])
@@ -111,8 +111,8 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = record['prepared_from']
-            parent_internal_id = str(record['prepared_from']) + '.hostseqprep'
+            internal_id = record['prepared_from'] + '.hostrawseqprep'
+            parent_internal_id = record['prepared_from']
             grand_parent_internal_id = record['visit_id']
             parent_id = get_parent_node_id(
                 id_tracking_file, parent_type, parent_internal_id)
