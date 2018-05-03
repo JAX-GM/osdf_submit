@@ -78,7 +78,8 @@ NodeDataFiles = {
     # 'hostSeqPrep' : './data_files/host_seq_prep.csv',
     # 'proteome' :    './data_files/proteome.csv',
     # 'hostWgsSample':  './data_files/wgs_samples.csv',
-    'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
+    # 'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
+    'host_cytokine' : './data_files/host_cytokine.csv',
     # 'hostSeqPrepTranscriptome' : './data_files/host_transcriptomics_hostSeqSet.csv',
     #
     #

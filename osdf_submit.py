@@ -87,8 +87,12 @@ def main():
     # sample_nodes = host_Seq_Prep_Sample.submit(settings.NodeDataFiles['WgsSample'])
 
     """ HostWgsRawSeqSet node """
-    from nodes import host_WgsRawSeqSet   
-    host_wgsrawseqset_nodes = host_WgsRawSeqSet.submit(settings.NodeDataFiles['hostRawSeqPrep'])
+    # from nodes import host_WgsRawSeqSet   
+    # host_wgsrawseqset_nodes = host_WgsRawSeqSet.submit(settings.NodeDataFiles['hostRawSeqPrep'])
+
+    """ Cytokine node """
+    from nodes import cytokine   
+    host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine'])
 
     # """ Host TranscriptomicSample node """
     #from nodes import sample

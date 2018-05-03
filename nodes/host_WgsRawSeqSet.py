@@ -46,7 +46,7 @@ def load(internal_id, search_field):
     # node-specific variables:
     NodeTypeName = node_type
     NodeLoadFunc = 'load_hostWgsRawSeqSet'
-
+    import pdb ; pdb.set_trace()
     return load_node(internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
 
@@ -69,6 +69,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.local_file    = record['local_file']
     node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
     node.size          = int(record['size'])
+    node.urls          = {record['array_local_url']}
 #    node.tags = list_tags(node.tags,
 #                          # 'test', # for debug!!
 #                          'sample name: '+record['visit_id'],
