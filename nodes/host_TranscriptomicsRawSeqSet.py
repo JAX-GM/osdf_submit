@@ -64,7 +64,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.format        = 'fastq'
     node.format_doc    = 'https://en.wikipedia.org/wiki/FASTQ_format'
     node.exp_length    = 0 #record['exp_length']
-    node.local_file    = record['FilePath']
+    node.local_file    = record['local_file_path']
     node.checksums     = {'md5':record['md5'], 'sha256':record['sha']}
     node.size          = int(record['SIZE'])
     #node.tags = list_tags(node.tags,
@@ -109,7 +109,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = record['host_transcriptomics_id']
+            internal_id = str(record['host_transcriptomics_id']) +'.host_transcriptomics'
             parent_internal_id = record['host_seq_prep_name_id'] ##Link to Host_seq_prep ID
             grand_parent_internal_id = record['sample_name_id']  ##Link to Sample ID
 
@@ -124,6 +124,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
                     log.debug('loaded node newbie...')
                     node_is_new = True
 
+                import pdb ; pdb.set_trace()
                 saved = validate_record(parent_id, node, record,
                                         data_file_name=data_file)
                 if saved:

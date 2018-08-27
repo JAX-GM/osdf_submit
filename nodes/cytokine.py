@@ -65,9 +65,9 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 
     node.study         = 'prediabetes'
     node.comment       = record['sample_name_id'] + '.cytokine'
-    node.checksums     = {'md5': md5.hexdigest(), 'sha256':record['sha256']}
+    node.checksums     = {'md5':record['md5'], 'sha256':record['sha256']}
     node.subtype       = 'prediabetes'
-    node.urls          = record['FilePath']
+#    node.urls          = record['local_file']
     node.format_doc    = 'https://en.wikipedia.org/wiki/Tab-separated_values'
     node.format        = 'tsv'
 
@@ -84,22 +84,21 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 #    node.pride_id      = 'null'
 #    node.storage_duration = 0
 #    node.size          = int(record['size'])
-    node.tags = list_tags(node.tags,
-                          # 'test', # for debug!!
-                          'visit id: '+record['visit_id'],
-                          'subject id: '+record['rand_subject_id'],
-                          'file prefix: '+ record['prep_id'],
-                          'file name: '+ str(record['FILE_NAME']),
-                         )
+#    node.tags = list_tags(node.tags,
+#                          # 'test', # for debug!!
+#                          'visit id: '+record['visit_id'],
+#                          'subject id: '+record['rand_subject_id'],
+#                          'file prefix: '+ record['prep_id'],
+#                          'file name: '+ str(record['FILE_NAME']),
+#                         )
 
-
+    import pdb ; pdb.set_trace()
     parent_link = {'prepared_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
 
     csv_fieldnames = get_field_header(data_file_name)
 
-    import pdb ; pdb.set_trace()
     if not node.is_valid():
         write_out_csv(data_file_name+'_invalid_records.csv',
                       fieldnames=csv_fieldnames, values=[record,])

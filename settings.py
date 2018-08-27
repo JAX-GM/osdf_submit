@@ -79,7 +79,7 @@ NodeDataFiles = {
     # 'proteome' :    './data_files/proteome.csv',
     # 'hostWgsSample':  './data_files/wgs_samples.csv',
     # 'hostRawSeqPrep' : './data_files/host_seq_prep.csv',
-    'host_cytokine' : './data_files/host_cytokine.csv',
+    # 'host_cytokine' : './data_files/host_cytokine.csv',
     # 'hostSeqPrepTranscriptome' : './data_files/host_transcriptomics_hostSeqSet.csv',
     #
     #
@@ -124,9 +124,11 @@ NodeDataFiles = {
     #'hostAssayPrep':   './data_files/KevinMetabolome2017.csv',
     #'metabolome':   './data_files/KevinMetabolome2017.csv',
 
-    #'Visit':        './data_files/RezaFiles.csv',
-    #'hostSeqPrep':   './data_files/RezaFiles.csv',
-    #'hostTranscriptomicsRawSeqSet':   './data_files/RezaFiles.csv',
+    # REZA - host_transcriptomics_raw_seq_set
+    #'host_transcript_Reza_Visit':        './data_files/RezaFiles.csv',
+    #'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
+    'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
+    #'host_transcript_Reza_hostTranscriptomicsRawSeqSet':   './data_files/RezaFiles.csv',
 
 
     # ...plus all dnaPreps, rawFiles, etc....

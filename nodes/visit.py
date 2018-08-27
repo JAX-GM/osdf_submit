@@ -51,12 +51,12 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 	write_csv_headers(data_file_name,fieldnames=csv_fieldnames)
 
 	node.visit_id = record['DCC_VISIT_IDS']
-	node.visit_number = int(record['visit_id'])
-	node.interval = int(record['interval'])
+	node.visit_number = int(record['visit_id_id'])
+	node.interval = int(record['visit_id_id'])
 	node.tags = list_tags(
-				'rand_subject_id: '+ record['rand_subject_id'],
+				'rand_subject_id: '+ record['rand_patient_id'],
 				'study: prediabetes',
-				'subgroup: ' + record['visit_type'],
+				#'subgroup: ' + record['visit_type'],
 				)
 	log.debug('parent_id: '+str(parent_id))
 	node.links = {'by':[parent_id]}
@@ -96,7 +96,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 			# node-specific variables:
 			load_search_field = 'visit_id'
 			internal_id = record['DCC_VISIT_IDS']
-			parent_internal_id = record['rand_subject_id']  ##Text ID to find the parent and get back OSDF ID
+			parent_internal_id = record['rand_patient_id']  ##Text ID to find the parent and get back OSDF ID
 			grand_parent_internal_id = 'prediabetes'
 
 			parent_id = get_parent_node_id(

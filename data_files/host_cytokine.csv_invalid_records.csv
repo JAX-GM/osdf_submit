@@ -1,1 +1,2 @@
 ﻿SampleID,RedCapID,Timepoint,RandomID,Filename,FilePath,md5sum,sha256
+69-001-1012,69-001,1012,ZOZOW1T,ZOZOW1T-1012,ZOZOW1T-1012_648,Cytokine_ZOZOW1T_1012.tsv,/srv/gsfs0/projects/iPoP/HMP2_data_submission/cytokine2/Cytokine_ZOZOW1T_1012.tsv,38adeafad904566f6e481de26062b9d3,1cc914f082e334a19c8e0526fbfe7c932bee26f60ac43de4b1e95419f61b5ed6

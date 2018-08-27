@@ -114,7 +114,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 	node.tags = list_tags(
 			'sample id: ' + record['sample_name_id'],
 			'visit id: ' + record['visit_id'],
-			'subject id: ' + record['rand_subject_id'],
+			'subject id: ' + record['rand_patient_id'],
 			'study: prediabetes',
 			#'consented: ' + record['consented'],
 			)
@@ -162,7 +162,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 				load_search_field = 'name'
 				internal_id = record['sample_name_id']
 				parent_internal_id = record['visit_id']
-				grand_parent_internal_id = record['rand_subject_id']
+				grand_parent_internal_id = record['rand_patient_id']
 
 				parent_id = get_parent_node_id(
 					id_tracking_file, parent_type, parent_internal_id)
