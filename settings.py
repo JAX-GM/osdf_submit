@@ -127,8 +127,8 @@ NodeDataFiles = {
     # REZA - host_transcriptomics_raw_seq_set
     #'host_transcript_Reza_Visit':        './data_files/RezaFiles.csv',
     #'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
-    'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
-    #'host_transcript_Reza_hostTranscriptomicsRawSeqSet':   './data_files/RezaFiles.csv',
+    #'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
+    'host_transcript_Reza_Sample':   './data_files/RezaFiles.csv',
 
 
     # ...plus all dnaPreps, rawFiles, etc....
