@@ -51,8 +51,8 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 	write_csv_headers(data_file_name,fieldnames=csv_fieldnames)
 
 	node.visit_id = record['DCC_VISIT_IDS']
-	node.visit_number = int(record['visit_id_id'])
-	node.interval = int(record['visit_id_id'])
+	node.visit_number = int(record['visit_num'])
+	node.interval = int(record['interval'])
 	node.tags = list_tags(
 				'rand_subject_id: '+ record['rand_patient_id'],
 				'study: prediabetes',

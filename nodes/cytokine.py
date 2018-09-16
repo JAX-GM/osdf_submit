@@ -70,7 +70,6 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 #    node.urls          = record['local_file']
     node.format_doc    = 'https://en.wikipedia.org/wiki/Tab-separated_values'
     node.format        = 'tsv'
-
 #    node.sample_name   = record['SAMPLE_PARENT_ID']
 #    node.contact       = record['sequencing_contact']
 #    node.center        = record['center']
@@ -128,9 +127,9 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = os.path.basename(record['local_file'])
+            internal_id = os.path.basename(record['FileLocation'])
             parent_internal_id = record['sample_name_id']
-            grand_parent_internal_id = record['visit_id']
+            grand_parent_internal_id = record['DCC_VISIT_IDS']
 
             parent_id = get_parent_node_id(
                 id_tracking_file, parent_type, parent_internal_id)

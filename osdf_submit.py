@@ -58,20 +58,19 @@ def main():
 
     # """ Visit node """
     #from nodes import visit
-    #visit_nodes = visit.submit(settings.NodeDataFiles['host_transcript_Reza_Visit'])
+    #visit_nodes = visit.submit(settings.NodeDataFiles['host_cytokine2'])
 
     # """ Sample node """
     #from nodes import sample
-    #sample_nodes = sample.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
+    #sample_nodes = sample.submit(settings.NodeDataFiles['host_cytokine2'])
 
     """ HostSeqPrep node """
     #from nodes import host_Seq_Prep
     #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['host_transcript_Reza_hostSeqPrep'])
 
     """ HostTranscriptomicRawSeqPrep node """
-    from nodes import host_TranscriptomicsRawSeqSet
-    host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
-
+    #from nodes import host_TranscriptomicsRawSeqSet
+    #host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
 
     # """ Metabolome HOST Sample node """
     #from nodes import metabolome
@@ -89,7 +88,6 @@ def main():
     #from nodes import hostTranscriptomicsRawSeqSet
     #host_transcriptomic_raw_seq_set_nodes = hostTranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['hostTranscriptomicsRawSeqSet'])
 
-
     # """ WGS HOST Sample node """
     # from nodes import host_Seq_Prep_Sample
     # sample_nodes = host_Seq_Prep_Sample.submit(settings.NodeDataFiles['WgsSample'])
@@ -99,8 +97,8 @@ def main():
     # host_wgsrawseqset_nodes = host_WgsRawSeqSet.submit(settings.NodeDataFiles['hostRawSeqPrep'])
 
     """ Cytokine node """
-    #from nodes import cytokine   
-    #host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine'])
+    from nodes import cytokine   
+    host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine2'])
 
     # """ Host TranscriptomicSample node """
     #from nodes import sample
@@ -112,7 +110,7 @@ def main():
 
     """ HostAssayPrep node """
     #from nodes import host_Assay_Prep
-    #host_assay_prep_nodes = host_Assay_Prep.submit(settings.NodeDataFiles['hostAssayPrep'])
+    #host_assay_prep_nodes = host_Assay_Prep.submit(settings.NodeDataFiles['host_cytokine2'])
 
     """ 16S DNA Prep node """
     # from nodes import r16sDnaPrep

@@ -65,10 +65,10 @@ def generate_mixs(row):
 			#'material': 'feces(ENVO:00002003)' if re.match('stool', row['body_site'].lower()) \
 			#        else 'oronasal secretion(ENVO:02000035)' if re.match('nasal', row['body_site'].lower()) \
 			#        else '',
-			'material': 'blood(ENVO:02000020)',
+			'material': 'plasma(ENVO:01000798)',
 			# 'material': 'urine(ENVO:00002047)' \
 			#         if re.match('Urine', row['SAMPLE_FLUID_TYPE']) \
-			#         else 'plasma(ENVO:01000798)',
+			#         else 'blood(ENVO:02000020)',
 			'project_name': 'iHMP',
 			'rel_to_oxygen': 'N/A',
 			# 'samp_collect_device': 'blood draw',
@@ -113,7 +113,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 	node.mixs = generate_mixs(record)
 	node.tags = list_tags(
 			'sample id: ' + record['sample_name_id'],
-			'visit id: ' + record['visit_id'],
+			'visit id: ' + record['DCC_VISIT_IDS'],
 			'subject id: ' + record['rand_patient_id'],
 			'study: prediabetes',
 			#'consented: ' + record['consented'],
@@ -153,7 +153,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 	csv_fieldnames = get_field_header(data_file)
 	for record in load_data(data_file):
 		# check not 'unknown' jaxid, not missing visit info
-		if len(record['visit_id']) > 0:
+		if len(record['DCC_VISIT_IDS']) > 0:
 			log.debug('\n...next record...')
 			try:
 				log.debug('data record: '+str(record))
@@ -161,7 +161,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 				# Node-Specific Variables:
 				load_search_field = 'name'
 				internal_id = record['sample_name_id']
-				parent_internal_id = record['visit_id']
+				parent_internal_id = record['DCC_VISIT_IDS']
 				grand_parent_internal_id = record['rand_patient_id']
 
 				parent_id = get_parent_node_id(

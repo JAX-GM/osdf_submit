@@ -66,17 +66,17 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     #        md5sum.update(chunk)
 
     node.study         = 'prediabetes'
-    node.comment       = record['sample_name_id'] + '.hostassayprep'
+    node.comment       = record['host_assay_prep_id']
     node.sample_name   = record['sample_name_id']
-    node.contact       = 'Kevin Contrepois'
+    node.contact       = 'Wenyu Zhou'
     node.center        = 'Stanford'
-    node.format        = 'raw'
-    node.format_doc    = 'https://en.wikipedia.org/wiki/raw'
+    node.format        = 'csv'
+    node.format_doc    = 'https://en.wikipedia.org/wiki/csv'
     node.exp_length    = 0 #record['exp_length']
     #node.local_file    = record['DCC_File_Path']
-    node.experiment_type    = 'Untargeted metabolomics'
+    node.experiment_type    = record['experiment_type']
     node.title         = 'T2D Prediabetes Proteomics'
-    node.prep_id       = record['rand_subject_id']
+    node.prep_id       = record['rand_patient_id']
     node.pride_id      = 'null'
     #node.checksums     = {'md5': md5.hexdigest(), 'sha256':record['sha256']}
     node.storage_duration = 0
@@ -124,9 +124,9 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             # node-specific variables:
             load_search_field = 'comment'
-            internal_id = record['sample_name_id'] + '.hostassayprep'
+            internal_id = record['host_assay_prep_id']
             parent_internal_id = record['sample_name_id']
-            grand_parent_internal_id = record['visit_id']
+            grand_parent_internal_id = record['DCC_VISIT_IDS']
 
             parent_id = get_parent_node_id(
                 id_tracking_file, parent_type, parent_internal_id)
