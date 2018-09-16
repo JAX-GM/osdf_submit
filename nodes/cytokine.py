@@ -76,7 +76,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 #    node.format        = 'mzXML'
 #    node.format_doc    = 'https://en.wikipedia.org/wiki/Mass_spectrometry_data_format'
 #    node.exp_length    = 0 #record['exp_length']
-#    node.local_file    = record['FILE_NAME']
+    node.local_file    = record['FileLocation']
 #    node.experiment_type    = 'Untargeted metabolomics'
 #    node.title         = record['title']
 #    node.prep_id       = record['prep_id']
@@ -91,8 +91,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 #                          'file name: '+ str(record['FILE_NAME']),
 #                         )
 
-    import pdb ; pdb.set_trace()
-    parent_link = {'prepared_from':[parent_id]}
+    parent_link = {'derived_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
 
@@ -140,6 +139,7 @@ def submit(data_file, id_tracking_file=node_tracking_file):
                 log.debug('loaded node newbie...')
                 node_is_new = True
 
+            import pdb ; pdb.set_trace()
             saved = validate_record(parent_id, node, record,
                                     data_file_name=data_file)
             if saved:
