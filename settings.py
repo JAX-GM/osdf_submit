@@ -70,7 +70,7 @@ NodeDataFiles = {
     # 'RnaPrep':      './data_files/20160913-metadata-dnaPrep_rna.csv',
     # 'MicrobRnaRaw': './data_files/20160920_rnaseq_raw.csv',
     #
-    # 'metabolome':   './data_files/metabolome.csv',
+     'metabolome':   './data_files/metabolome.csv',
     # 'metabolomeSample': './data_files/metabolome.csv',
     # 'hostAssayPrep':   './data_files/metabolome.csv',
     # 'hostTranscriptomicSample':'./data_files/brian_host_transcriptomics_raw_seq_set.csv',
@@ -114,7 +114,7 @@ NodeDataFiles = {
 
     # 'Subject':      './data_files/HMP2_metadata-subjects_NotSubmitted-20170212.csv',
 
-    'Visit':        './data_files/visits.csv',
+    #'Visit':        './data_files/visits.csv',
     #'Sample':       './data_files/SaraProteome.csv',
     #'hostAssayPrep':   './data_files/SaraProteome.csv',
     #'proteome':   './data_files/SaraProteome.csv',
@@ -126,11 +126,11 @@ NodeDataFiles = {
 
     # REZA - host_transcriptomics_raw_seq_set
     #'host_transcript_Reza_Visit':        './data_files/RezaFiles.csv',
-    #'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
+    'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
     #'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
     #'host_transcript_Reza_Sample':   './data_files/RezaFiles.csv',
 
-    'host_cytokine2':   './data_files/host_cytokine2.csv',
+    #'host_cytokine2':   './data_files/host_cytokine2.csv',
 
     # ...plus all dnaPreps, rawFiles, etc....
     # 'RnaPrep':      './data_files/20170213-grep-rnaseq_missing_sample_preps.csv',

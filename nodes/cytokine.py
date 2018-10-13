@@ -139,7 +139,6 @@ def submit(data_file, id_tracking_file=node_tracking_file):
                 log.debug('loaded node newbie...')
                 node_is_new = True
 
-            import pdb ; pdb.set_trace()
             saved = validate_record(parent_id, node, record,
                                     data_file_name=data_file)
             if saved:

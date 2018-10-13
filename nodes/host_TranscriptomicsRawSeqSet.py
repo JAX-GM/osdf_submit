@@ -44,7 +44,7 @@ def load(internal_id, search_field):
 
     # node-specific variables:
     NodeTypeName = node_type #'HostTranscriptomicsRawSeqSet'
-    NodeLoadFunc = 'load_host_transcriptomics_raw_set_set'
+    NodeLoadFunc = 'load_host_transcriptomics_raw_seq_set'
     return load_node(internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
 def validate_record(parent_id, node, record, data_file_name=node_type):
@@ -63,7 +63,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.format        = 'fastq'
     node.format_doc    = 'https://en.wikipedia.org/wiki/FASTQ_format'
     node.exp_length    = 0 #record['exp_length']
-    node.urls    = record['local_file_path']
+    node.urls	       = {record['local_file_path']}
     node.checksums     = {'md5':record['md5'], 'sha256':record['sha']}
     node.size          = int(record['SIZE'])
     #node.tags = list_tags(node.tags,
@@ -118,7 +118,6 @@ def submit(data_file, id_tracking_file=node_tracking_file):
 
             if parent_id:
                 node_is_new = False # set to True if newbie
-                import pdb ; pdb.set_trace()
                 node = load(internal_id, load_search_field)
                 if not getattr(node, load_search_field):
                     log.debug('loaded node newbie...')
