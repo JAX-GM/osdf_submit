@@ -69,16 +69,16 @@ def main():
     #host_seq_prep_nodes = host_Seq_Prep.submit(settings.NodeDataFiles['host_transcript_Reza_hostSeqPrep'])
 
     """ HostTranscriptomicRawSeqPrep node """
-    from nodes import host_TranscriptomicsRawSeqSet
-    host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
+    #from nodes import host_TranscriptomicsRawSeqSet
+    #host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
 
     """ Metabolome HOST Sample node """
     #from nodes import metabolome
     #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
 
     # """ Proteome HOST Sample node """
-    #from nodes import proteome
-    #proteome_nodes = proteome.submit(settings.NodeDataFiles['proteome'])
+    from nodes import proteome
+    proteome_nodes = proteome.submit(settings.NodeDataFiles['proteome'])
 
     """ HostSeqPrep node """
     #from nodes import host_Seq_Prep

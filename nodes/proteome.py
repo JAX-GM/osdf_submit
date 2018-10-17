@@ -4,7 +4,7 @@
 import os
 import re
 
-from cutlass.Proteome import Proteome
+from cutlass.ProteomeNonPride import ProteomeNonPride
 
 import settings
 from cutlass_utils import \
@@ -16,7 +16,7 @@ filename = os.path.basename(__file__)
 log = log_it(filename)
 
 # the Higher-Ups
-node_type          = 'Proteome'
+node_type          = 'ProteomeNonPride'
 parent_type        = 'HostAssayPrep'
 grand_parent_type  = 'Sample'
 great_parent_type  = 'Visit'
@@ -45,7 +45,7 @@ def load(internal_id, search_field):
 
     # node-specific variables:
     NodeTypeName = node_type
-    NodeLoadFunc = 'load_proteome'
+    NodeLoadFunc = 'load_proteome_nonpride'
 
     return load_node(internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
@@ -63,7 +63,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     #node.format        = 'mzml'
     #node.format_doc    = 'https://en.wikipedia.org/wiki/'
     #node.exp_length    = 0 #record['exp_length']
-    node.raw_url    = [record['DCC_File_Path']]
+    node.raw_url.append(record['DCC_File_Path'])
     #node.size          = int(record['size'])
     #node.tags = list_tags(node.tags,
                           # 'test', # for debug!!
@@ -76,9 +76,9 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
     node.comment = record['sample_name_id']
     node.checksums = {'md5':record['MD5Sum'], 'sha256':record['SHA256']}
     node.data_processing_protocol = 'Targeted Data Independent analysis'
-    #node.detector = 'Multi-Channel Plate'
+    #node.detector = ''
     #node.exp_description = 'Protein profiling of more than 900 samples from pre-diabetic and diabetic participants and different time points of healthy, viral infection and immunization.'
-    #node.instrument_name = 'Triple-TOF 6600 (Sciex)'
+    #node.instrument_name = ''
     #node.pepid_url.append(record['DCC_File_Path'])
     #node.pepid_url.remove('')
     #node.pride_id = ''
@@ -147,11 +147,10 @@ def submit(data_file, id_tracking_file=node_tracking_file):
                 log.debug('loaded node newbie...')
                 node_is_new = True
 
-            import pdb ; pdb.set_trace()
-
+	    import pdb ; pdb.set_trace()
             saved = validate_record(parent_id, node, record,
                                     data_file_name=data_file)
-            if saved:
+	    if saved:
                 header = settings.node_id_tracking.id_fields
                 saved_name = getattr(saved, load_search_field)
                 vals = values_to_node_dict(

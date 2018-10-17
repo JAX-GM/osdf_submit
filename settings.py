@@ -117,7 +117,7 @@ NodeDataFiles = {
     #'Visit':        './data_files/visits.csv',
     #'Sample':       './data_files/SaraProteome.csv',
     #'hostAssayPrep':   './data_files/SaraProteome.csv',
-    #'proteome':   './data_files/SaraProteome.csv',
+    'proteome':   './data_files/SaraProteome.csv',
 
     #'Sample':       './data_files/KevinMetabolome2017.csv',
     #'hostSeqPrep':   './data_files/KevinMetabolome2017.csv',
@@ -126,7 +126,7 @@ NodeDataFiles = {
 
     # REZA - host_transcriptomics_raw_seq_set
     #'host_transcript_Reza_Visit':        './data_files/RezaFiles.csv',
-    'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
+    #'host_transcript_Reza_Sample':        './data_files/RezaFiles.csv',
     #'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
     #'host_transcript_Reza_Sample':   './data_files/RezaFiles.csv',
 
