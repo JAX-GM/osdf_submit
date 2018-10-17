@@ -77,8 +77,8 @@ def main():
     #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
 
     # """ Proteome HOST Sample node """
-    from nodes import proteome
-    proteome_nodes = proteome.submit(settings.NodeDataFiles['SaraProteome'])
+    from nodes import proteomeNonPride
+    proteome_nodes = proteomeNonPride.submit(settings.NodeDataFiles['SaraProteome'])
 
     """ HostSeqPrep node """
     #from nodes import host_Seq_Prep
