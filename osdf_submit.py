@@ -72,7 +72,7 @@ def main():
     #from nodes import host_TranscriptomicsRawSeqSet
     #host_transcriptomic_raw_seq_set_nodes = host_TranscriptomicsRawSeqSet.submit(settings.NodeDataFiles['host_transcript_Reza_Sample'])
 
-    # """ Metabolome HOST Sample node """
+    """ Metabolome HOST Sample node """
     #from nodes import metabolome
     #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
 
@@ -97,8 +97,8 @@ def main():
     # host_wgsrawseqset_nodes = host_WgsRawSeqSet.submit(settings.NodeDataFiles['hostRawSeqPrep'])
 
     """ Cytokine node """
-    ##from nodes import cytokine   
-    ##host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine2'])
+    #from nodes import cytokine   
+    #host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine2'])
 
     # """ Host TranscriptomicSample node """
     #from nodes import sample
