@@ -44,7 +44,7 @@ def load(internal_id, search_field):
 
     # node-specific variables:
     NodeTypeName = node_type #'HostTranscriptomicsRawSeqSet'
-    NodeLoadFunc = 'load_host_transcriptomics_raw_set_set'
+    NodeLoadFunc = 'load_host_transcriptomics_raw_seq_set'
     return load_node(internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
 def validate_record(parent_id, node, record, data_file_name=node_type):

@@ -92,7 +92,7 @@ def validate_record(parent_id, node, record, data_file_name=node_type):
 #                         )
 
     import pdb ; pdb.set_trace()
-    parent_link = {'prepared_from':[parent_id]}
+    parent_link = {'derived_from':[parent_id]}
     log.debug('parent_id: '+str(parent_link))
     node.links = parent_link
 

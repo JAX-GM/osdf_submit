@@ -114,7 +114,7 @@ NodeDataFiles = {
 
     # 'Subject':      './data_files/HMP2_metadata-subjects_NotSubmitted-20170212.csv',
 
-    'Visit':        './data_files/visits.csv',
+    #'Visit':        './data_files/visits.csv',
     #'Sample':       './data_files/SaraProteome.csv',
     #'hostAssayPrep':   './data_files/SaraProteome.csv',
     #'proteome':   './data_files/SaraProteome.csv',
@@ -130,7 +130,9 @@ NodeDataFiles = {
     #'host_transcript_Reza_hostSeqPrep':   './data_files/RezaFiles.csv',
     #'host_transcript_Reza_Sample':   './data_files/RezaFiles.csv',
 
-    'host_cytokine2':   './data_files/host_cytokine2.csv',
+    ##'host_cytokine2':   './data_files/host_cytokine2.csv',
+
+    'SaraProteome':   './data_files/SaraProteome.csv',
 
     # ...plus all dnaPreps, rawFiles, etc....
     # 'RnaPrep':      './data_files/20170213-grep-rnaseq_missing_sample_preps.csv',

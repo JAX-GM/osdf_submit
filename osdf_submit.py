@@ -58,7 +58,7 @@ def main():
 
     # """ Visit node """
     #from nodes import visit
-    #visit_nodes = visit.submit(settings.NodeDataFiles['host_cytokine2'])
+    #visit_nodes = visit.submit(settings.NodeDataFiles['SaraProteome'])
 
     # """ Sample node """
     #from nodes import sample
@@ -77,8 +77,8 @@ def main():
     #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
 
     # """ Proteome HOST Sample node """
-    #from nodes import proteome
-    #proteome_nodes = proteome.submit(settings.NodeDataFiles['proteome'])
+    from nodes import proteome
+    proteome_nodes = proteome.submit(settings.NodeDataFiles['SaraProteome'])
 
     """ HostSeqPrep node """
     #from nodes import host_Seq_Prep
@@ -97,8 +97,8 @@ def main():
     # host_wgsrawseqset_nodes = host_WgsRawSeqSet.submit(settings.NodeDataFiles['hostRawSeqPrep'])
 
     """ Cytokine node """
-    from nodes import cytokine   
-    host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine2'])
+    ##from nodes import cytokine   
+    ##host_cytokine_nodes = cytokine.submit(settings.NodeDataFiles['host_cytokine2'])
 
     # """ Host TranscriptomicSample node """
     #from nodes import sample
