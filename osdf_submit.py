@@ -77,8 +77,8 @@ def main():
     #metabolome_nodes = metabolome.submit(settings.NodeDataFiles['metabolome'])
 
     # """ Proteome HOST Sample node """
-    from nodes import proteomeNonPride
-    proteome_nodes = proteomeNonPride.submit(settings.NodeDataFiles['SaraProteome'])
+    #from nodes import proteomeNonPride
+    #proteome_nodes = proteomeNonPride.submit(settings.NodeDataFiles['SaraProteome'])
 
     """ HostSeqPrep node """
     #from nodes import host_Seq_Prep
@@ -143,6 +143,18 @@ def main():
     """ Sample node """
     #from nodes import sample
     #sample_nodes = sample.submit(settings.NodeDataFiles['Sample'])
+
+    """ VisitAttribute node """
+    ##from nodes import visitattribute
+    ##visit_nodes = visitattribute.submit(settings.NodeDataFiles['visitattribute'])
+    
+    """ SampleAttribute node """
+    ##from nodes import sampleattribute
+    ##sample_nodes = sampleattribute.submit(settings.NodeDataFiles['sampleattribute'])
+
+    """ SubjectAttribute node """
+    from nodes import subjectattribute
+    subject_nodes = subjectattribute.submit(settings.NodeDataFiles['subjectattribute'])
 
     """ 16S DNA Prep node """
     #from nodes import r16sDnaPrep

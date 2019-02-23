@@ -39,6 +39,10 @@ class node_id_tracking:
 NodeDataFiles = {
     # 'Project':      './data_files/project_info.yaml',
     # 'Study':        './data_files/study_info.yaml',
+     'subjectattribute':      './data_files/subjectattribute.csv',
+     'visitattribute':        './data_files/visitattribute.csv',
+     'sampleattribute':       './data_files/sampleattribute.csv',
+
     # 'Subject':      './data_files/20160608-HMP2_metadata-subjects.csv',
     # 'Visit':        './data_files/20160609-HMP2_metadata-visits_jaxgm.csv',
     # 'Sample':       './data_files/20160610-HMP2_metadata-samples-final.csv',
@@ -132,7 +136,7 @@ NodeDataFiles = {
     #'host_transcript_Reza_Sample':   './data_files/RezaFiles.csv',
     ##'host_cytokine2':   './data_files/host_cytokine2.csv',
 
-    'SaraProteome':   './data_files/SaraProteome.csv',
+    #'SaraProteome':   './data_files/SaraProteome.csv',
     #'host_cytokine2':   './data_files/host_cytokine2.csv',
 
     # ...plus all dnaPreps, rawFiles, etc....

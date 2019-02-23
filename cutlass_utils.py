@@ -271,6 +271,7 @@ def load_node(internal_id, search_field, node_type, node_load_func):
              internal_id, search_field, NodeTypeName, NodeLoadFunc)
 
     try:
+        import pdb ; pdb.set_trace()
         query = format_query(internal_id, field=search_field)
         results = NodeSearch(query)
         log.debug('results: %s', results)
